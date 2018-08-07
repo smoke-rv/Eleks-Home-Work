@@ -1,0 +1,67 @@
+/*1. Replicate code from slide 8, create instances of car and truck. Try to call different
+methods for both, investigate output and explain why.*/
+
+class vehicle {
+    constructor(carModel, carYear, carSpeed) {
+        this.model = carModel;
+        this.year = carYear;
+        this.speed = carSpeed;
+    }
+
+    displayInfo() {
+        console.log(`Name: ${this.model};
+        Year: ${this.year};
+        Max Speed: ${this.speed};
+        Type: ${this.type};`);
+    }
+
+}
+
+class car extends vehicle {
+    constructor(carModel, carYear, carSpeed) {
+        super(carModel, carYear, carSpeed);
+        this.type = "car";
+    }
+
+    transportPeople() {
+        console.log(`I'm starting transporting passengers`);
+    }
+}
+
+class Truck extends vehicle {
+    constructor(carModel, carYear, carSpeed) {
+        super(carModel, carYear, carSpeed);
+        this.type = "Truck";
+    }
+
+    transportContainer() {
+        console.log(`I'm starting transpotring heavy conmtainer`);
+    }
+    
+}
+
+
+let VW = new car("Polo", 2016, 210);
+VW.displayInfo();
+VW.transportPeople();
+
+let Mercedes = new Truck("Actros", 2017, 140);
+Mercedes.displayInfo();
+Mercedes.transportContainer();
+
+
+
+
+//2. Add static method to one class, try to call it and investigate output.
+
+
+
+//3. Call method of father’s class.
+
+
+
+//4. Override method of father’s class.
+
+
+
+//5. Move classes to separate files and import them into the app using require.
