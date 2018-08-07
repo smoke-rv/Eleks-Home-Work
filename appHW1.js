@@ -25,7 +25,7 @@ console.log(d > e);
 //6. Write a JS program to check two given numbers and return true if one of the number is 50 or if their sum is 50
 let f = 35;
 let g = 15;
-console.log(f == 50 && g == 50 || f + g == 50);
+console.log(f === 50 && g === 50 || (f + g) === 50);
 
 //7. Write a JS program check if a given positive number is a multiple of 3 or a multiple of 7
 let h = 45;
