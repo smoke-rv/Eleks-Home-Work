@@ -41,9 +41,9 @@ class Truck extends vehicle {
 }
 
 
-let Scania = new car("Polo", 2016, 210);
-Scania.displayInfo();
-Scania.transportPeople();
+let VW = new car("Polo", 2016, 210);
+VW.displayInfo();
+VW.transportPeople();
 
 let Mercedes = new Truck("Actros", 2017, 140);
 Mercedes.displayInfo();
