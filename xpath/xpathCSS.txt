@@ -1,0 +1,26 @@
+Write 4 XPath locators
+• Wiki logo
+//*[contains(@class, "logo")]
+
+• Div element for Article count
+//div[@id="articlecount"]
+
+• 4-th item from "Did you know…" list
+//div[@id="mp-dyk"]/ul/li[4]
+
+• Count of ‘Interaction’ elements
+
+Write 4 CSS selectors
+• Wiki logo
+.mw-wiki-logo
+
+• Div element for Article count
+#articlecount
+
+• Main page link
+depends on what specific link meant
+#ca-nstab-main [href="/wiki/Main_Page"]
+#n-mainpage-description [href="/wiki/Main_Page"]
+
+• 2-nd item from "Did you know…" list
+div#mp-dyk>ul li:nth-of-type(2)

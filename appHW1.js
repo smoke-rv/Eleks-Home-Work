@@ -1,4 +1,4 @@
-//1. Write a JS program to compute and print the sum of the two given integers
+/* //1. Write a JS program to compute and print the sum of the two given integers
 let a = 10;
 let b = 38;
 console.log(a + b);
@@ -29,4 +29,12 @@ console.log(f === 50 && g === 50 || (f + g) === 50);
 
 //7. Write a JS program check if a given positive number is a multiple of 3 or a multiple of 7
 let h = 45;
-console.log(h % 3 == 0 || h % 7 == 0);
+console.log(h % 3 == 0 || h % 7 == 0); */
+
+function test50(x, y) {
+  return ((x == 50 || y == 50) || (x + y == 50));
+}
+  console.log(test50(50, 50))
+  console.log(test50(20, 50))
+  console.log(test50(20, 20))
+  console.log(test50(20, 30))
