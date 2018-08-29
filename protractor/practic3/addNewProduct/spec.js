@@ -15,8 +15,6 @@ let addProd = require('./addProd');
 describe('add new product', function() {
     it('should add new product', async function() {
         await addProd.get();
-        await addProd.clickAdmin();
-        await addProd.clickAdd();
         await addProd.setName('smoke-rv');
         await addProd.clickProductFamily();
         await addProd.selectProductFamily();
@@ -24,5 +22,5 @@ describe('add new product', function() {
         await addProd.typeIn('smoke-rv');
 
         expect(await addProd.check()).toEqual('smoke-rv');
-    });
+        });
 })
