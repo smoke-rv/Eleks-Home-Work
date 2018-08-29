@@ -1,8 +1,8 @@
 class addProd {
     constructor() {
-        this.administrator = element(by.css('.nav > li:nth-child(2) > a:nth-child(1)'));
+        this.administrator = element(by.xpath('/html/body/app/navbar/nav/div/div[2]/ul/li[2]/a'));
         this.addNewProduct = element(by.id('Add New Product'));
-        this.enterName = element(by.xpath('//*[@id="product-name"]'));
+        this.enterName = element(by.css('.section-body__actions > span:nth-child(2)'));
         this.productFamily = element(by.xpath('/html/body/app/main/administration/div[2]/div/div/projects/div/div[1]/div[2]/project/div/div[3]/form/div[1]/div[2]/product-family-list/dropdown-gds/ss-multiselect-dropdown/div/button'));
         this.dropDownElement = element(by.xpath('/html/body/app/main/administration/div[2]/div/div/projects/div/div[1]/div[2]/project/div/div[3]/form/div[1]/div[2]/product-family-list/dropdown-gds/ss-multiselect-dropdown/div/ul/li[23]/a/span'));
         this.saveButton = element(by.model('saveProductAdd'));
