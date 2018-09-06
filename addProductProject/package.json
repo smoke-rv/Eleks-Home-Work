@@ -1,0 +1,17 @@
+{
+    "name": "EDSAddNewProduct",
+    "version": "1.0.0",
+    "description": "Automation for adding new products in EDS portal",
+    "main": "config.js",
+    "directories": {
+        "test": "tests"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {},
+    "devDependencies": {
+        "allure-commandline": "^2.7.0",
+        "jasmine-allure-reporter": "^1.0.2",
+        "protractor": "^5.4.0"
+    }
+}
