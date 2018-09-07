@@ -5,6 +5,9 @@ let dropdownItemLocator = "li.dropdown-item:nth-child(3) > a:nth-child(1) > span
 let searchFieldLocator = "./html/body/app/main/administration/div[2]/div/div/projects/div/div[1]/div[1]/div[2]/search-field/div/input";
 let searchResultLocator = "li.preview-list__item";
 let searchProductFamilyLocator = ".input-group-sm > input:nth-child(2)"
+let deleteButton = "button.gds-btn-icon:nth-child(1)";
+let deleteConfirmLocator = ".modal-dialog .gds-btn-danger";
+
 class AddProductsAction {
     constructor() {
        // this.header = new HeaderPage();
@@ -42,6 +45,14 @@ class AddProductsAction {
        
     getSearchResult () {
         return element(by.css(searchResultLocator));
+    };
+
+    getDelete () {
+        return element(by.css(deleteButton));
+    };
+
+    getDeleteConfirm () {
+        return element(by.css(deleteConfirmLocator));
     }
 
     async addProduct(name) {
@@ -51,9 +62,13 @@ class AddProductsAction {
         await this.getDropdownItem().click();
         await this.getSaveButton().click();
         await this.getSearchField().sendKeys(name);
-        await this.getSearchResult().toEqual(name);
-
+        await this.getSearchResult().click();
+        await this.getDelete().click();
+        await this.getDeleteConfirm().click();
+        
         return new addProduct();
+
+        
     }
 
 }
