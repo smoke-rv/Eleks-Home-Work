@@ -6,12 +6,14 @@
     "directories": {
         "test": "tests"
     },
-    "author": "",
-    "license": "ISC",
+   
     "dependencies": {},
     "devDependencies": {
         "allure-commandline": "^2.7.0",
         "jasmine-allure-reporter": "^1.0.2",
         "protractor": "^5.4.0"
-    }
+    },
+    "author": "Vadym Polishchuk",
+    "license": "ISC"
 }
+

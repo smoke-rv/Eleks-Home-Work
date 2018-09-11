@@ -14,13 +14,13 @@ exports.config = {
     },
     // Allure
 
-    framework: 'jasmine2',
+    /* framework: 'jasmine2',
     onPrepare: function() {
         let AllureReporter = require('jasmine-allure-reporter');
         jasmine.getEnv().addReporter(new AllureReporter({
             resultsDir: 'allure-results'
         }));
-    },
+    }, */
 
     onPrepare: function () {
         let AllureReporter = require('jasmine-allure-reporter');

@@ -41,7 +41,6 @@ class AddProductsAction {
     getSaveButton () {
         return element(by.css(saveButton));
     };
-
        
     getSearchResult () {
         return element(by.css(searchResultLocator));
@@ -66,7 +65,7 @@ class AddProductsAction {
         await this.getDelete().click();
         await this.getDeleteConfirm().click();
         
-        return new addProduct();
+        return new AddProductsAction();
 
         
     }
