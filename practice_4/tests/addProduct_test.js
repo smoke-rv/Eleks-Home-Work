@@ -9,6 +9,6 @@ describe('add product suite', function() {
 
         //await browser.sleep(5000);
   
-        expect(getSearchResult().toEqual("smoke-rv"));
+        expect(addProductsPage().toEqual("smoke-rv"));
     });
   });

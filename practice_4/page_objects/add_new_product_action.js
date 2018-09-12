@@ -52,7 +52,7 @@ class AddProductsAction {
 
     getDeleteConfirm () {
         return element(by.css(deleteConfirmLocator));
-    }
+    };
 
     async addProduct(name) {
         await this.getProductNameLocator().sendKeys(name);
@@ -65,10 +65,8 @@ class AddProductsAction {
         await this.getDelete().click();
         await this.getDeleteConfirm().click();
         
-        return new AddProductsAction();
-
-        
-    }
+        return new AddProductsAction();     
+    };
 
 }
 module.exports = AddProductsAction;

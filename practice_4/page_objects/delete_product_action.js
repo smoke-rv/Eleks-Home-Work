@@ -26,7 +26,7 @@ class DeleteProductAction {
 
     getDeleteConfirm () {
         return element(by.css(deleteConfirmLocator));
-    }
+    };
 
     async deleteProduct(name) {
         await this.getSearchField().sendKeys(name);
@@ -34,10 +34,8 @@ class DeleteProductAction {
         await this.getDelete().click();
         await this.getDeleteConfirm().click();
         
-        return new DeleteProductAction();
+        return new DeleteProductAction();        
+    };
 
-        
-    }
-
-}
+};
 module.exports = DeleteProductAction;

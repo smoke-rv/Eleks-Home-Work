@@ -35,9 +35,9 @@ exports.config = {
         });
     },
 
-    scripts: {
+   /*  scripts: {
         posttest: "allure generate allure-results --clean -o allure-report || true"
-    },
+    }, */
 
     // Spec patterns are relative to the configuration file location passed
     // to protractor (in this example conf.js).
