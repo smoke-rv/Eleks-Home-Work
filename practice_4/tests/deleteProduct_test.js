@@ -1,10 +1,12 @@
-let deleteProductAction = require("../page_objects/delete_product_action");
+let DeleteProduct = require("../page_objects/delete_product_action");
 
 describe('delete product suite', function() {
     it('delete product pass', async function() {
-        let deleteExistedProduct = new deleteProductAction();
+        let deleteProductAction = new DeleteProduct();
 
-        deleteProduct.open();
-        let deleteProductPage = await deleteExistedProduct.deleteProduct()
+        deleteProductAction.open();
+        let deleteProductPage = await deleteProductAction.deleteProduct();
+
+        expect(deleteProductPage.isToastVisible());
     })
 })

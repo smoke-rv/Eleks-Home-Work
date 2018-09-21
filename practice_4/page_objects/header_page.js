@@ -5,21 +5,23 @@ class HeaderPage {
     constructor() {
 
     }
-    getProductsButton () {
+    getProductsButton() {
         return element(by.css(productsButtonLocator));
     }
 
-    getAdminButton () {
+    getAdminButton() {
         return element(by.css(adminButtonLocator));
     }
 
-    async isHeaderVisible() {
-        return await this.getProductsButton().isDisplayed() 
-            && await this.getAdminButton().isDisplayed();
+    async waitForHeaderAvailable(){
+        await browser.wait(protractor.ExpectedConditions.visibilityOf(this.getAdminButton()), 15000)
     }
 
-
+    async isHeaderVisible() {
+        await this.waitForHeaderAvailable();
+        return await this.getAdminButton().isDisplayed()
+            && await this.getProductsButton().isDisplayed();
+    }
 }
-
 
 module.exports = HeaderPage;

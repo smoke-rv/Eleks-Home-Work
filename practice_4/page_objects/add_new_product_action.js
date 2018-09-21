@@ -1,3 +1,7 @@
+let ProductsPage = require("./products_page");
+let Button = require("./controls/button");
+let Input = require("./controls/input");
+
 let productNameLocator = "#product-name";
 let productFamilyDropDownButton = "div.dropdown";
 let saveButton = "#saveProductAdd";
@@ -19,53 +23,55 @@ class AddProductsAction {
     };
 
     getProductNameLocator () {
-        return element(by.css(productNameLocator));
+        return new Input(element(by.css(productNameLocator)), "Product name field");
     };
 
     getProductFamilyDropDown () {
-        return element(by.css(productFamilyDropDownButton));
+        return new Button(element(by.css(productFamilyDropDownButton)), "Product family drop down menu");
     };
     
     getSearchProductFamily () {
-        return element(by.css(searchProductFamilyLocator));
+        return new Input(element(by.css(searchProductFamilyLocator)), "search product family input field");
     };
 
     getDropdownItem () {
-        return element(by.css(dropdownItemLocator));
+        return new Button(element(by.css(dropdownItemLocator)), "Item of drop down list of product family");
     };
 
     getSearchField () {
-        return element(by.xpath(searchFieldLocator));
+        return new Input(element(by.xpath(searchFieldLocator)), "Existed products search field");
     };
  
     getSaveButton () {
-        return element(by.css(saveButton));
+        return new Button(element(by.css(saveButton)), "Save product button");
     };
        
     getSearchResult () {
         return element(by.css(searchResultLocator));
-    };
+    }; 
 
-    getDelete () {
-        return element(by.css(deleteButton));
-    };
-
-    getDeleteConfirm () {
-        return element(by.css(deleteConfirmLocator));
-    }
 
     async addProduct(name) {
-        await this.getProductNameLocator().sendKeys(name);
-        await this.getProductFamilyDropDown().click();
-        await this.getSearchProductFamily().sendKeys("AQA JS FAMILY");
-        await this.getDropdownItem().click();
-        await this.getSaveButton().click();
-        await this.getSearchField().sendKeys(name);
-        await this.getSearchResult().click();
-        await this.getDelete().click();
-        await this.getDeleteConfirm().click();
+        await allure.createStep("Enter Product Name", async() => {
+            await this.getProductNameLocator().sendKeys(name);            
+        })();
+
+        await allure.createStep("Set Product Family", async() => {
+            await this.getProductFamilyDropDown().click();
+            await this.getSearchProductFamily().sendKeys("AQA JS FAMILY");
+            await this.getDropdownItem().click();
+        })();
         
-        return new AddProductsAction();
+        await allure.createStep("Save product", async() => {
+            await this.getSaveButton().click();
+        })();
+
+        await allure.createStep("Search product", async() => {
+            await this.getSearchField().sendKeys(name);
+            await this.getSearchResult().isDisplayed(name);
+        })();
+              
+        return new ProductsPage();
 
         
     }

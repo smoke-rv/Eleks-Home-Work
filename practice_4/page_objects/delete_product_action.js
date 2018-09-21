@@ -9,35 +9,34 @@ class DeleteProductAction {
     constructor() {}
 
     getSearchField () {
-        return element(by.xpath(searchFieldLocator));
+        return new input(element(by.xpath(searchFieldLocator)), "Search field");
     };
  
     getSaveButton () {
-        return element(by.css(saveButton));
+        return new button(element(by.css(saveButton)), "Save button");
     };
        
     getSearchResult () {
-        return element(by.css(searchResultLocator));
+        return new button(element(by.css(searchResultLocator)), "Search field");
     };
 
     getDelete () {
-        return element(by.css(deleteButton));
+        return new button(element(by.css(deleteButton)), "Delete button");
     };
 
     getDeleteConfirm () {
-        return element(by.css(deleteConfirmLocator));
+        return new button(element(by.css(deleteConfirmLocator)), "Delete confirm button");
     }
 
     async deleteProduct(name) {
-        await this.getSearchField().sendKeys(name);
-        await this.getSearchResult().click();
-        await this.getDelete().click();
-        await this.getDeleteConfirm().click();
+        await allure.createStep("Delete product", async() => {
+            await this.getSearchField().sendKeys(name);
+            await this.getSearchResult().click();
+            await this.getDelete().click();
+            await this.getDeleteConfirm().click();
+        })();
         
-        return new DeleteProductAction();
-
-        
+        return new ProductsPage();
     }
-
 }
 module.exports = DeleteProductAction;
